@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="posts">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+     <!-- Angular Js -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+      
+     <!-- CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <link rel="stylesheet" href="css/style.css">
+     <title>Blog</title>
+</head>
+
+<body>
+
+<section class="container" id="posts" >
+    <div class="posts-container" >
+        <div class="post" ng-controller="postsIr">
+            <img class="img-fluid" ng-src="https://api-fake-blog.herokuapp.com{{ publicacoes.thumbImage }}">
+            <div class="date">
+                <i class="far fa-clock"></i>
+                <span>{{ publicacoes.postDate }}</span>
+            </div>
+            <h3 class="title">{{ publicacoes.title }}</h3>
+            <br>
+            <p class="descricao">{{ publicacoes.description }}</p>
+            <br>
+            <div class="links">
+                <a href="#" class="user">
+                    <i class="far fa-user"></i>
+                    <span>{{ publicacoes.profileName }}</span>
+                </a>
+                <a href="./index.html" class="btn">Voltar</a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+

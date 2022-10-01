@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="blog">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Blog</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+<header class="header">
+
+    <a href="#" class="logo"><span>b</span>log</a>
+
+    <nav class="navbar">
+        <a href="#banner">home</a>
+        <a href="#posts">publicações</a>
+        <a href="#contact">contato</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="pesquise aqui..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+
+
+
+
+<section class="banner" id="banner">
+
+    <div class="content">
+        <h3>veja as ultimas notícias</h3>
+        <p>Veja algumas das útlimas notícias relacionadas ao mercado inovador da tecnologia da informação</p>
+        <a href="#posts" class="btn">ir</a>
+    </div>
+
+</section>
+
+
+
+
+<section class="container" id="posts" ng_controller="Rest">
+
+    <div class="posts-container" >
+
+        <div class="post" ng_repeat="publicacao in publicacoes">
+            <img class="img-fluid" ng-src="https://api-fake-blog.herokuapp.com{{ publicacao.thumbImage }}">
+            <div class="date">
+                <i class="far fa-clock"></i>
+                <span>{{ publicacao.postDate }}</span>
+            </div>
+            <h3 class="title">{{ publicacao.title }}</h3>
+            <a href="./ir.html" class="btn" ng-click="linha($index)">ir</a>
+            <div class="links">
+                <a href="#" class="user">
+                    <i class="far fa-user"></i>
+                    <span>{{ publicacao.profileName }}</span>
+                </a>
+                <a href="#" class="icon">
+                    <i class="far fa-comment"></i>
+                    <span>(45)</span>
+                </a>
+                <a href="#" class="icon">
+                    <i class="far fa-share-square"></i>
+                    <span>(29)</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sidebar">
+
+        <div class="box">
+            <h3 class="title">sobre mim</h3>
+            <div class="about">
+                <img src="images/user.png" alt="">
+                <h3>Thomás Müller</h3>
+                <p>Melhor aluno do professor Diego Cândido</p>
+                <div class="follow">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+</section>
+
+
+
+
+<section class="contact" id="contact">
+
+    <form action="">
+        <h3>contato</h3>
+        <div class="inputBox">
+            <input type="text" placeholder="nome">
+            <input type="email" placeholder="sobrenome">
+        </div>
+        <div class="inputBox">
+            <input type="number" placeholder="número de telefone">
+            <input type="text" placeholder="email">
+        </div>
+        <textarea name="" placeholder="envie-me uma mensagem" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="enviar mensagem" class="btn">
+    </form>
+
+</section>
+
+
+
+
+<section class="footer">
+
+    <div class="follow">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+
+    <div class="credit">criado por <span>thomas Muller</span></div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+    
+</body>
+</html>
